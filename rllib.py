@@ -7,9 +7,11 @@ tune.run(
     stop={"episode_reward_mean": 200},
     config={
         "env": "CartPole-v0",
-        "num_gpus": 1,
-        "num_workers": 10,
-        "lr": tune.grid_search([0.01, 0.001, 0.0001]),
+        "num_envs_per_worker": 10,
+        "num_gpus_per_worker": 0.2,
+        "framework": "torch",
+        "num_workers": 2,
+        "lr": tune.grid_search([0.001, 0.0001,0.005])
     },
 )
 
