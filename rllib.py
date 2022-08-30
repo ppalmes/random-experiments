@@ -1,7 +1,7 @@
 import ray
 from ray import tune
 
-ray.init(address="ray://example-ray-head:10001")
+ray.init(address="ray://ibmcloud-ray-head:10001")
 tune.run(
     "PPO",
     stop={"episode_reward_mean": 200},
